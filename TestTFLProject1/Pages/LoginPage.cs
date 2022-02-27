@@ -8,7 +8,8 @@ namespace TestTFLProject1.Pages
     class LoginPage
     {
         public IWebDriver WebDriver{ get; }
-        public LoginPage(IWebDriver webdriver) { 
+        public LoginPage(IWebDriver webdriver) 
+        { 
             
             WebDriver = webdriver;
 
@@ -19,10 +20,18 @@ namespace TestTFLProject1.Pages
         public IWebElement planJourneyCookieAccept => WebDriver.FindElement(By.Id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
         public IWebElement planJourneyCookieDone => WebDriver.FindElement(By.XPath("//button/strong[contains(.,'Done')]"));
         public IWebElement planJourneyInvalidError => WebDriver.FindElement(By.XPath("//span[@id='InputFrom-error' and contains(.,'The From field is required.')]"));
-                
+
+        public IWebElement recentLink => WebDriver.FindElement(By.XPath("//a[contains(.,'Recents')]"));
+
         public void ClickPlanJourney() => planJourney.Click();
         public void ClickAcceptCookie() => planJourneyCookieAccept.Click();
         public void ClickDoneonCookie() => planJourneyCookieDone.Click();
+        public void ClickRecent() => recentLink.Click();
+
+        public void CheckNoRecentResultMessage()
+        {
+            WebDriver.FindElement(By.XPath("//div[@id='jp-recent-content-jp-']/p[contains(.,'You currently have no recent journeys')]"));
+        }
 
         public void PlanJourney(string From, string To)
         {

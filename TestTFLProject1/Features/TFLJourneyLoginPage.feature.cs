@@ -74,14 +74,12 @@ namespace TestTFLProject1.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Loging to Journey Planner")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void LogingToJourneyPlanner()
+        [NUnit.Framework.DescriptionAttribute("Plan a journey")]
+        public virtual void PlanAJourney()
         {
-            string[] tagsOfScenario = new string[] {
-                    "mytag"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Loging to Journey Planner", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Plan a journey", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -103,77 +101,28 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 6
- testRunner.Given("Navigate to TFL Journey Planner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("Navigate to TFL Journey Planner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "From",
                             "To"});
                 table1.AddRow(new string[] {
-                            "Bank",
-                            "Waterloo"});
+                            "Epping",
+                            "Leyton"});
 #line 7
  testRunner.And("I input journey From and to details", ((string)(null)), table1, "And ");
 #line hidden
 #line 10
-    testRunner.When("I Click on the Plan Journey Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 11
- testRunner.Then("I can see the results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Plan a journey")]
-        public virtual void PlanAJourney()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Plan a journey", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 14
-testRunner.Given("Navigate to TFL Journey Planner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When("I Click on the Plan Journey Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "From",
                             "To"});
                 table2.AddRow(new string[] {
-                            "Victoria",
-                            "London Bridge"});
-#line 15
- testRunner.And("I input journey From and to details", ((string)(null)), table2, "And ");
-#line hidden
-#line 18
- testRunner.When("I Click on the Plan Journey Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "From",
-                            "To"});
-                table3.AddRow(new string[] {
-                            "London Bridge",
-                            "Victoria"});
-#line 19
-testRunner.Then("user should be presented with the Journey Results page with the correct summary", ((string)(null)), table3, "Then ");
+                            "Epping",
+                            "Leyton"});
+#line 11
+testRunner.Then("user should be presented with the Journey Results page with the correct summary", ((string)(null)), table2, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -186,7 +135,7 @@ testRunner.Then("user should be presented with the Journey Results page with the
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Edit a journey", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 24
+#line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -206,20 +155,29 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 25
+#line 17
 testRunner.Given("Navigate to TFL Journey Planner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "From",
+                            "To"});
+                table3.AddRow(new string[] {
+                            "Victoria",
+                            "London Bridge"});
+#line 18
+ testRunner.And("I input journey From and to details", ((string)(null)), table3, "And ");
+#line hidden
+#line 21
+testRunner.When("I Click on the Plan Journey Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "From",
                             "To"});
                 table4.AddRow(new string[] {
-                            "Victoria",
-                            "London Bridge"});
-#line 26
- testRunner.And("I input journey From and to details", ((string)(null)), table4, "And ");
-#line hidden
-#line 29
-testRunner.When("I Click on the Plan Journey Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                            "London Bridge",
+                            "Victoria"});
+#line 22
+testRunner.When("I edit a journey and input the following station", ((string)(null)), table4, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "From",
@@ -227,17 +185,8 @@ testRunner.When("I Click on the Plan Journey Page", ((string)(null)), ((TechTalk
                 table5.AddRow(new string[] {
                             "London Bridge",
                             "Victoria"});
-#line 30
-testRunner.When("I edit a journey and input the following station", ((string)(null)), table5, "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                            "From",
-                            "To"});
-                table6.AddRow(new string[] {
-                            "London Bridge",
-                            "Victoria"});
-#line 33
-testRunner.Then("user should be presented with the Journey Results page with the correct summary", ((string)(null)), table6, "Then ");
+#line 25
+testRunner.Then("user should be presented with the Journey Results page with the correct summary", ((string)(null)), table5, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -250,6 +199,55 @@ testRunner.Then("user should be presented with the Journey Results page with the
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid field entry", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 29
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 30
+testRunner.Given("Navigate to TFL Journey Planner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "From",
+                            "To"});
+                table6.AddRow(new string[] {
+                            "XYZ",
+                            "XYZ"});
+#line 31
+testRunner.And("I input journey From and to details", ((string)(null)), table6, "And ");
+#line hidden
+#line 34
+testRunner.When("I Click on the Plan Journey Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 35
+testRunner.Then("user should be presented with the Journey Results page with an error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("No destination entered")]
+        public virtual void NoDestinationEntered()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("No destination entered", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 37
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -277,8 +275,8 @@ testRunner.Given("Navigate to TFL Journey Planner", ((string)(null)), ((TechTalk
                             "From",
                             "To"});
                 table7.AddRow(new string[] {
-                            "XYZ",
-                            "XYZ"});
+                            "",
+                            "Bank"});
 #line 39
 testRunner.And("I input journey From and to details", ((string)(null)), table7, "And ");
 #line hidden
@@ -286,55 +284,6 @@ testRunner.And("I input journey From and to details", ((string)(null)), table7, 
 testRunner.When("I Click on the Plan Journey Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 43
-testRunner.Then("user should be presented with the Journey Results page with an error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("No destination entered")]
-        public virtual void NoDestinationEntered()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("No destination entered", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 45
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 46
-testRunner.Given("Navigate to TFL Journey Planner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                            "From",
-                            "To"});
-                table8.AddRow(new string[] {
-                            "",
-                            "Bank"});
-#line 47
-testRunner.And("I input journey From and to details", ((string)(null)), table8, "And ");
-#line hidden
-#line 50
-testRunner.When("I Click on the Plan Journey Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 51
 testRunner.Then("user sees an error message telling them that the To field is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -348,7 +297,7 @@ testRunner.Then("user sees an error message telling them that the To field is re
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Recent journey", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 54
+#line 46
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -368,14 +317,38 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 55
+#line 47
 testRunner.Given("Navigate to TFL Journey Planner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                            "From",
+                            "To"});
+                table8.AddRow(new string[] {
+                            "Victoria",
+                            "London Bridge"});
+#line 48
+ testRunner.And("I input journey From and to details", ((string)(null)), table8, "And ");
+#line hidden
+#line 51
+ testRunner.When("I Click on the Plan Journey Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "From",
+                            "To"});
+                table9.AddRow(new string[] {
+                            "London Bridge",
+                            "Victoria"});
+#line 52
+testRunner.Then("user should be presented with the Journey Results page with the correct summary", ((string)(null)), table9, "Then ");
+#line hidden
+#line 55
+testRunner.When("user click on the link to go back to Plan a journey page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 56
-testRunner.When("I Click on recent journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Then("user will click on Recents link button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 57
-testRunner.Then("user should be presented with the Journey Results page with the correct summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("user should see recent journeys", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

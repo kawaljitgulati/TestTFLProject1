@@ -1,24 +1,16 @@
 ﻿Feature: TFLJourneyLoginPage
 	Login to Journey Planner
 
-@mytag
-Scenario: Loging to Journey Planner
-	Given Navigate to TFL Journey Planner
-	And I input journey From and to details
-		| From | To       |
-		| Bank | Waterloo |
-    When I Click on the Plan Journey Page
-	Then I can see the results 
 
 Scenario: Plan a journey
 Given Navigate to TFL Journey Planner
 	And I input journey From and to details
-		| From     | To            |
-		| Victoria | London Bridge |
+		| From   | To     |
+		| Epping | Leyton |
  When I Click on the Plan Journey Page
 Then user should be presented with the Journey Results page with the correct summary
-		| From          | To       |
-		| London Bridge | Victoria |
+		| From   | To     |
+		| Epping | Leyton |
 
 
 Scenario: Edit a journey
@@ -53,6 +45,13 @@ Then user sees an error message telling them that the To field is required
 
 Scenario: Recent journey
 Given Navigate to TFL Journey Planner
-When I Click on recent journey
+	And I input journey From and to details
+		| From     | To            |
+		| Victoria | London Bridge |
+ When I Click on the Plan Journey Page
 Then user should be presented with the Journey Results page with the correct summary
- 
+		| From          | To       |
+		| London Bridge | Victoria |
+When user click on the link to go back to Plan a journey page
+Then user will click on Recents link button
+Then user should see recent journeys

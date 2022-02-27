@@ -25,10 +25,14 @@ namespace TestTFLProject1.Pages
         public IWebElement journeyTo => WebDriver.FindElement(By.Id("InputTo"));
         public IWebElement updatejourney => WebDriver.FindElement(By.Id("plan-journey-button"));
         public IWebElement editSwapstn => WebDriver.FindElement(By.XPath("//a[contains(.,'Switch from and to')]"));
+
+        public IWebElement planAJourneyLink => WebDriver.FindElement(By.XPath("//a[contains(.,'Plan a journey')]"));
         public void ClickEditJourney() => editLink.Click();
 
         public void ClickupdateJourney() => updatejourney.Click();
         public bool IsErrorplanJourneyInvalidErrorexits() => planJourneyInvalidError.Displayed;
+
+        public void ClickPlanAJourneyLink() => planAJourneyLink.Click();
         public void CheckJourneyResults(string From, string To)
         {
           WebDriver.FindElement(By.XPath("//span[@class='jp-results-headline' and contains(.,'Journey results')]/../../../following-sibling::div[contains(.,'" + To + "')]"));
@@ -46,10 +50,7 @@ namespace TestTFLProject1.Pages
             //journeyFrom.SendKeys(To);
             //journeyFrom.SendKeys(From);
             editSwapstn.Click();
-
-
         }
-
     }
 }
 

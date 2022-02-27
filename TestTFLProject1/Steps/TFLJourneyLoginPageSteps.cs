@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Threading;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using TestTFLProject1.Pages;
@@ -48,7 +49,6 @@ namespace TestTFLProject1.Steps
         {
             loginPage.IsPageexits();
         }
-                
 
 
         [When(@"user plans a journey from London Victoria to London Bridge")]
@@ -59,7 +59,7 @@ namespace TestTFLProject1.Steps
 
         [Then(@"user should be presented with the Journey Results page with the correct summary")]
         public void ThenUserShouldBePresentedWithTheJourneyResultsPageWithTheCorrectSummary(Table table)
-            {
+        {
             dynamic data = table.CreateDynamicInstance();
             resultsPage.CheckJourneyResults((string)data.From, (string)data.To);
 
@@ -87,12 +87,23 @@ namespace TestTFLProject1.Steps
             resultsPage.ClickupdateJourney();
         }
 
-        [When(@"I Click on recent journey")]
-        public void WhenIClickOnRecentJourney()
+        [When(@"user click on the link to go back to Plan a journey page")]
+        public void WhenUserClickOnTheLinkToGoBackToPlanAJourneyPage()
         {
-           
+            Thread.Sleep(TimeSpan.FromSeconds(10));
+            resultsPage.ClickPlanAJourneyLink();
         }
 
+        [Then(@"user will click on Recents link button")]
+        public void ThenUserWillClickOnRecentsLinkButton()
+        {
+            loginPage.ClickRecent();
+        }
 
+        [Then(@"user should see recent journeys")]
+        public void ThenUserShouldSeeRecentJourneys()
+        {
+            loginPage.CheckNoRecentResultMessage();
+        }
     }
 }
